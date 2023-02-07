@@ -1,0 +1,111 @@
+127.0.0.1:6379> SADD CUST_DETAILS : name abi ragavi ravi
+(integer) 5
+127.0.0.1:6379> SADD CUST_DETAILS : id 123 456 789
+(integer) 4
+127.0.0.1:6379> SADD CUST_DETAILS : mem_type gold silver platinum
+(integer) 4
+127.0.0.1:6379> SADD CAR_DETAILS : brand bmw audi benz
+(integer) 5
+127.0.0.1:6379> SADD CAR_DETAILS : car_id b1 a3 be9
+(integer) 4
+127.0.0.1:6379> SADD CAR_DETAILS : cust_id 456 123 789
+(integer) 4
+127.0.0.1:6379> SADD CAR_DETAILS : model m5 a8 s_class
+(integer) 4
+127.0.0.1:6379> SADD CAR_DETAILS : engine 4395cc 2998cc 3500cc
+(integer) 4
+127.0.0.1:6379> SADD CAR_DETAILS : year 2015 2008 2022
+(integer) 4
+127.0.0.1:6379> SADD CAR_DETAILS : make sm hss 75ss
+(integer) 4
+127.0.0.1:6379> SADD STAFF_DETAILS : name anu boopathy sathya
+(integer) 5
+127.0.0.1:6379> SADD STAFF_DETAILS : id st1 st2 st3
+(integer) 4
+127.0.0.1:6379> SADD STAFF_DETAILS : cust_id 789 456 123
+(integer) 4
+127.0.0.1:6379> SADD STAFF_DETAILS : position manager supervisor dealer
+(integer) 4
+127.0.0.1:6379> SADD STAFF_DETAILS : salary 24000 30000 15000
+(integer) 4
+127.0.0.1:6379> SMEMBERS CUST_DETAILS
+ 1) "ragavi"
+ 2) "ravi"
+ 3) "123"
+ 4) "id"
+ 5) "789"
+ 6) "456"
+ 7) "mem_type"
+ 8) "name"
+ 9) "gold"
+10) "platinum"
+11) ":"
+12) "abi"
+13) "silver"
+127.0.0.1:6379> SMEMBERS CAR_DETAILS
+ 1) "123"
+ 2) "hss"
+ 3) "model"
+ 4) "789"
+ 5) "engine"
+ 6) "sm"
+ 7) "benz"
+ 8) "a3"
+ 9) "make"
+10) "brand"
+11) "456"
+12) "be9"
+13) "b1"
+14) "2015"
+15) "3500cc"
+16) "bmw"
+17) "2022"
+18) "2998cc"
+19) "s_class"
+20) "cust_id"
+21) "m5"
+22) "year"
+23) "a8"
+24) "75ss"
+25) "car_id"
+26) "2008"
+27) ":"
+28) "4395cc"
+29) "audi"
+127.0.0.1:6379> SMEMBERS STAFF_DETAILS
+ 1) "456"
+ 2) "sathya"
+ 3) "manager"
+ 4) "name"
+ 5) "boopathy"
+ 6) ":"
+ 7) "st1"
+ 8) "st2"
+ 9) "123"
+10) "30000"
+11) "789"
+12) "position"
+13) "supervisor"
+14) "15000"
+15) "salary"
+16) "st3"
+17) "id"
+18) "cust_id"
+19) "anu"
+20) "dealer"
+21) "24000"
+127.0.0.1:6379> SADD GARAGE_CAR : brands mahindra skoda i10
+(integer) 5
+127.0.0.1:6379> SPOP GARAGE_CAR
+"brands"
+127.0.0.1:6379> SMEMBERS GARAGE_CAR
+1) "mahindra"
+2) ":"
+3) "skoda"
+4) "i10"
+127.0.0.1:6379> DEL GARAGE_CAR
+(integer) 1
+127.0.0.1:6379> SMEMBERS GARAGE_CAR
+(empty list or set)
+127.0.0.1:6379> SAVE
+OK
